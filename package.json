@@ -1,0 +1,12 @@
+{
+  "name": "stylelint-plugin-prettier",
+  "version": "1.0.0",
+  "description": "Styleling plugin for checking (and fixing) formatting with Prettier",
+  "main": "index.js",
+  "repository": "https://github.com/rhumaric/stylelint-plugin-prettier.git",
+  "author": "Romaric Pascal <hello@romaricpascal.is>",
+  "license": "MIT",
+  "peerDependencies": {
+    "stylelint": "^9.0.0"
+  }
+}
