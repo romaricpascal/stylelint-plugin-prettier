@@ -6,10 +6,12 @@ var messages = stylelint.utils.ruleMessages(ruleName, {
   expected: "Expected ..."
 });
 
-module.exports = stylelint.createPlugin(ruleName, function(
-  primaryOption,
-  secondaryOptionObject
-) {});
+module.exports = stylelint.createPlugin(
+  ruleName,
+  function() /* primaryOption,
+  secondaryOptionObject */
+  {}
+);
 
 module.exports.ruleName = ruleName;
 module.exports.messages = messages;
