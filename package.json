@@ -7,8 +7,8 @@
   "author": "Romaric Pascal <hello@romaricpascal.is>",
   "license": "MIT",
   "peerDependencies": {
-    "prettier": "^1.10.2",
-    "stylelint": "^9.0.0"
+    "prettier": ">=1.10.2",
+    "stylelint": ">=3.0.2"
   },
   "devDependencies": {
     "eslint": "4.18.0",
@@ -17,12 +17,16 @@
     "husky": "0.14.3",
     "lint-staged": "6.1.1",
     "prettier": "1.10.2",
-    "stylelint": "9.0.0"
+    "stylelint": "9.0.0",
+    "stylelint-test-rule-tape": "0.2.0"
   },
-  "dependencies": {},
+  "dependencies": {
+
+  },
   "scripts": {
-    "eslint": "eslint \"**/*.js\"",
-    "precommit": "lint-staged"
+    "eslint:all": "eslint \"**/*.js\"",
+    "precommit": "lint-staged",
+    "test": "node test"
   },
   "lint-staged": {
     "**/*.js": "eslint"

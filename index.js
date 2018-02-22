@@ -10,7 +10,9 @@ module.exports = stylelint.createPlugin(
   ruleName,
   function() /* primaryOption,
   secondaryOptionObject */
-  {}
+  {
+    return function() {};
+  }
 );
 
 module.exports.ruleName = ruleName;
