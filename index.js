@@ -18,7 +18,9 @@ module.exports = stylelint.createPlugin(
         prettier = require("prettier");
       }
 
-      var isFormattingOK = prettier.check(root.source.input.css);
+      var isFormattingOK = prettier.check(root.source.input.css, {
+        parser: "scss"
+      });
 
       if (!isFormattingOK) {
         stylelint.utils.report({

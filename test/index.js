@@ -17,18 +17,24 @@ function getFileContents(globPattern) {
   });
 }
 
+function createTestCase(content) {
+  return { code: content };
+}
+
 var testRule = require("stylelint-test-rule-tape");
 var prettierRule = require("..");
 
 Promise.all([
-  getFileContents(ACCEPT_FOLDER),
-  getFileContents(REJECT_FOLDER)
+  getFileContents(ACCEPT_FOLDER).then(contents => contents.map(createTestCase)),
+  getFileContents(REJECT_FOLDER).then(contents => contents.map(createTestCase))
 ]).then(function(contents) {
   var tests = {
     ruleName: prettierRule.ruleName,
     config: {},
     accept: contents[0],
-    reject: contents[1]
+    reject: contents[1],
+    // Avoid irrelevant tests for empty rules...
+    skipBasicChecks: true
   };
   testRule(prettierRule.rule, tests);
 });
