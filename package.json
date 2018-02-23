@@ -16,12 +16,14 @@
     "eslint-plugin-prettier": "2.6.0",
     "husky": "0.14.3",
     "lint-staged": "6.1.1",
+    "loud-rejection": "1.6.0",
     "prettier": "1.10.2",
     "stylelint": "9.0.0",
     "stylelint-test-rule-tape": "0.2.0"
   },
   "dependencies": {
-
+    "fs-readfile-promise": "^3.0.1",
+    "globby": "^8.0.1"
   },
   "scripts": {
     "eslint:all": "eslint \"**/*.js\"",
