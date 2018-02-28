@@ -18,7 +18,7 @@ function getFileContents(globPattern) {
 }
 
 function createTestCase(content) {
-  return { code: content };
+  return { code: content, fixed: "as" };
 }
 
 var testRule = require("stylelint-test-rule-tape");
@@ -28,9 +28,11 @@ Promise.all([
   getFileContents(ACCEPT_FOLDER).then(contents => contents.map(createTestCase)),
   getFileContents(REJECT_FOLDER).then(contents => contents.map(createTestCase))
 ]).then(function(contents) {
+  // console.log(contents);
   var tests = {
     ruleName: prettierRule.ruleName,
-    config: {},
+    config: [true],
+    fix: true,
     accept: contents[0],
     reject: contents[1],
     // Avoid irrelevant tests for empty rules...
