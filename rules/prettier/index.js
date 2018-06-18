@@ -1,10 +1,10 @@
 const ruleName = "prettier/prettier";
 const stylelint = require("stylelint");
-const postcss = require("postcss");
 // Prettier is pretty heavy to load, so lazy loading it
 // when rule first gets executed
 let prettier;
 module.exports = function(expectation, options, context) {
+  // console.log(arguments);
   return function(root, result) {
     if (!prettier) {
       prettier = require("prettier");
@@ -16,14 +16,7 @@ module.exports = function(expectation, options, context) {
 
     if (!isFormattingOK) {
       if (context && context.fix) {
-        // console.log(context);
-        const formatted = prettier.format(root.source.input.css, {
-          parser: "scss"
-        });
-        // console.log(JSON.stringify(formatted));
-        result.root = postcss.parse("a {}");
-        result.css = formatted;
-        return;
+        // TODO: Fix the things
       }
 
       stylelint.utils.report({

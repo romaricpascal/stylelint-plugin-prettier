@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 
 const FOLDERS = ["fixtures/accept", "fixtures/reject", "fixtures/fixed"];
-const FILES = [["basic.css"], ["basic.css"], ["basic.css"]];
+const FILES = [["basic.css"], ["basic.css"], []];
 
 const testRule = require("../../../test/testRule");
 const rule = require("..");
