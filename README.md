@@ -1,5 +1,7 @@
 # stylelint-plugin-prettier
 
+> **This plugin is a stale work in progress, prefer the [stylelint-prettier](https://github.com/prettier/stylelint-prettier) plugin backed by the Prettier team. No further development will happen on this repository.**
+
 Stylelint plugin to check (and fix) formatting with Prettier
 
 ## TODO
